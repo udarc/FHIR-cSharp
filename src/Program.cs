@@ -8,7 +8,12 @@ namespace fhir_csharp_01
 {
     public static class Program
     {
-        private const string _fhirServer = "http://vonk.fire.ly";
+        private const string _fhirServer = "http://vonk.fire.ly"; 
+    /* Corrent error: Unhandled exception. System.FormatException: While building a POCO: Literal 'male1' is not a valid value for enumeration 'AdministrativeGender' (at Bundle.entry[2].resource[0].gender[0])
+   at Hl7.Fhir.Rest.TaskExtensions.WaitResult[T](Task`1 task)
+   at Hl7.Fhir.Rest.BaseFhirClient.Continue(Bundle current, PageDirection direction)
+   at fhir_csharp_01.Program.Main(String[] args) in D:\FHIR\FHIR-cSharp\src\Program.cs:line 64*/
+        // private const string _fhirServer = "http://hapi.fhir.org/baseR4/"; //
         static void Main(string[] args)
         {
             FhirClient fhirClient = new FhirClient(_fhirServer)
